@@ -2,7 +2,7 @@
 import "./App.css";
 import Player from "./components/player";
 import Sidebar from "./components/sidebar";
-import Tracklist from "./components/tracklist";
+import Mainblock from "./components/mainblock";
 import NavBar from "./components/navbar";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   <div className="container">
     <main className="main">
       <NavBar/>
-      <Tracklist/>
+      <Mainblock/>
       <Sidebar/>
     </main>
     <Player/>
