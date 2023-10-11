@@ -1,8 +1,4 @@
-
-
-
 export default function PlaylistItem(props) {
-
 console.log(props)
     return(
         <div className="sidebar__item">
