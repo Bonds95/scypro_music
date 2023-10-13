@@ -3,6 +3,11 @@ export const playlistImg = [
     {id: 2, src: "img/playlist02.png"}, 
     {id: 3, src: "img/playlist03.png"}
   ]
+  export const loadplaylistImg = [
+    {id: 1, src: "img/load_playlist.png"}, 
+    {id: 2, src: "img/load_playlist.png"}, 
+    {id: 3, src: "img/load_playlist.png"}
+  ]
 
 export const trackInfo = [
   {id: 1, trackname: "Guilt", author: "Nero", extra: "", album: "Welcome Reality", duration: "4:44"},

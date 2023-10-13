@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react";
 import "./mainblock.css";
 import SearchTrack from "./searchtrack";
 import TrackContainer from "./trackcontainer";
 import LoadTrackContainer from "./loadtrackcontainer";
 
-export default function Mainblock() {
-  const [load, setLoad] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoad(!load);
-    }, 5000);
-  }, []);
+export default function Mainblock({load}) {
+  
 
-  if (load == false) {
+  if (load === false) {
     return (
       <div className="main__centerblock centerblock">
         <SearchTrack />
