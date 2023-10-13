@@ -4,6 +4,8 @@ import PlaylistItem from "./playlists"
 import { playlistImg } from "./arrows"
 
 export default function Sidebar() {
+
+  
     return (
         <div className="main__sidebar sidebar">
         <ExitPanel/>
