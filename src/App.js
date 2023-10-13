@@ -27,7 +27,7 @@ function App() {
           <Mainblock load={load} />
           <Sidebar load={load}/>
         </main>
-        <Player />
+        <Player load={load}/>
         <footer className="footer" />
       </div>
     </div>
