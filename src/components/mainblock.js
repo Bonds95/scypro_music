@@ -10,7 +10,7 @@ export default function Mainblock({load}) {
       <div className="main__centerblock centerblock">
         <SearchTrack />
         <h2 className="centerblock__h2">Треки</h2>
-        <TrackFilter/>
+        <TrackFilter />
         <TrackContainer load={load}/>
       </div>
     );
