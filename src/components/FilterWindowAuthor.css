@@ -1,11 +1,11 @@
-.filter__wrapper{
+.filter__wrapper-author {
     position: relative;
 }
 
-.filter__window {
+.filter__window-author {
     position: absolute;
-    top: 285px;
-    left: 445px;
+    top: 30px;
+    left: 90px;
     width: 248px;
     height: 305px;
     background-color: #313131;
@@ -14,14 +14,14 @@
     
 }
 
-.filter__item {
+.filter__item-author {
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 24px;
 }
 
-.filter__item:hover {
+.filter__item-author:hover {
     text-decoration: underline;
     color: #B672FF;
 }
