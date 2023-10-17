@@ -1,0 +1,27 @@
+.filter__wrapper-year{
+    position: relative;
+}
+
+.filter__window-year {
+    position: absolute;
+    top: 30px;
+    left: 240px;
+    width: 248px;
+    height: 305px;
+    background-color: #313131;
+    border-radius: 12px;
+    padding: 34px;
+    
+}
+
+.filter__item-year {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.filter__item-year:hover {
+    text-decoration: underline;
+    color: #B672FF;
+}

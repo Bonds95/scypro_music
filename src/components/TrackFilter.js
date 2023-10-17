@@ -1,22 +1,36 @@
 import FilterWindowAuthor from "./FilterWindowAuthor";
 import FilterWindowGenre from "./FilterWindowGenre";
 import { useState } from "react";
+import FilterWindowYear from "./FilterWindowYear";
 
 export default function TrackFilter() {
-  const [filter, setFilter] = useState(false);
+  let [filter, setFilter] = useState(false);
 
   function handleClick() {
     setFilter(!filter);
+    setFilter2((filter2 = false));
+    setFilter3((filter3 = false));
   }
-  const [filter2, setFilter2] = useState(false);
+  let [filter2, setFilter2] = useState(false);
 
   function handleClick2() {
     setFilter2(!filter2);
+    setFilter((filter = false));
+    setFilter3((filter3 = false));
+  }
+
+  let [filter3, setFilter3] = useState(false);
+
+  function handleClick3() {
+    setFilter3(!filter3);
+    setFilter((filter = false));
+    setFilter2((filter2 = false));
   }
   return (
     <div className="centerblock__filter filter">
       {filter && <FilterWindowAuthor />}
-      {filter2 && <FilterWindowGenre />}
+      {filter2 && <FilterWindowYear />}
+      {filter3 && <FilterWindowGenre />}
 
       <div className="filter__title">Искать по:</div>
       <div
@@ -31,7 +45,12 @@ export default function TrackFilter() {
       >
         году выпуска
       </div>
-      <div className="filter__button button-genre _btn-text">жанру</div>
+      <div
+        onClick={handleClick3}
+        className="filter__button button-genre _btn-text"
+      >
+        жанру
+      </div>
     </div>
   );
 }
