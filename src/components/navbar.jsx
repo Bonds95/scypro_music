@@ -5,7 +5,7 @@ import NavMenu from "./navmenu"
 
 export default function NavBar() {
 
-  const [vision, setVision] = useState(true);
+  const [vision, setVision] = useState(false);
 
   function handleClick() {
     setVision(!vision)
