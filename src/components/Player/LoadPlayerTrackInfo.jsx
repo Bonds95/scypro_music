@@ -1,7 +1,9 @@
+import * as S from "./PlayerTrackInfo.styles";
+
 export default function LoadPlayerTrackInfo() {
   return (
-    <div className="track-play__contain">
+    <S.TrackPlayContain>
       <img src="img/load_player.png" />
-    </div>
+    </S.TrackPlayContain>
   );
 }

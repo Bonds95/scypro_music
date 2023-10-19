@@ -1,21 +1,21 @@
+import * as S from "./PlayerTrackInfo.styles";
+
 export default function PlayerTrackInfo() {
-    return(
-        <div className="track-play__contain">
-                <div className="track-play__image">
-                  <svg className="track-play__svg" alt="music">
-                    <use xlinkHref="img/icon/sprite.svg#icon-note" />
-                  </svg>
-                </div>
-                <div className="track-play__author">
-                  <a className="track-play__author-link" href="http://">
-                    Ты та...
-                  </a>
-                </div>
-                <div className="track-play__album">
-                  <a className="track-play__album-link" href="http://">
-                    Баста
-                  </a>
-                </div>
-              </div>
-    )
+  return (
+    <S.TrackPlayContain>
+      <S.TrackPlayImage>
+        <S.TrackPlaySvg alt="music">
+          <use xlinkHref="img/icon/sprite.svg#icon-note" />
+        </S.TrackPlaySvg>
+      </S.TrackPlayImage>
+      <S.TrackPlayAuthor>
+        <S.TrackPlayAuthorLink href="http://">Ты та...</S.TrackPlayAuthorLink>
+      </S.TrackPlayAuthor>
+      <S.TrackPlayAlbum className="track-play__album">
+        <S.TrackPlayAlbumLink className="track-play__album-link" href="http://">
+          Баста
+        </S.TrackPlayAlbumLink>
+      </S.TrackPlayAlbum>
+    </S.TrackPlayContain>
+  );
 }
