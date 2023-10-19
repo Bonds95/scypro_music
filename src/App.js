@@ -1,12 +1,9 @@
 import "./App.css";
 import Player from "./components/player";
-import Sidebar from "./components/sidebar";
+import Sidebar from "./components/SideBar/sidebar";
 import Mainblock from "./components/mainblock";
-import NavBar from "./components/navbar";
+import NavBar from "./components/NavBar/NavBar";
 import { useState, useEffect } from "react";
-
-
-
 
 function App() {
   const [load, setLoad] = useState(false);
@@ -16,23 +13,18 @@ function App() {
     }, 5000);
   }, []);
 
-  
-
   return (
     <div className="wrapper">
       <div className="container">
-         
         <main className="main">
           <NavBar />
-          <Mainblock  load={load} />
-          <Sidebar load={load}/>
+          <Mainblock load={load} />
+          <Sidebar load={load} />
         </main>
-        <Player load={load}/>
+        <Player load={load} />
         <footer className="footer" />
       </div>
-      
     </div>
-    
   );
 }
 
