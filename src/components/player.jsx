@@ -1,6 +1,8 @@
 import "./player.css"
+import PlayerTrackInfo from "./PlayerTrackInfo"
+import LoadPlayerTrackInfo from "./LoadPlayerTrackInfo"
 
-export default function Player() {
+export default function Player({load}) {
     return (
         <div className="bar">
       <div className="bar__content">
@@ -35,23 +37,7 @@ export default function Player() {
               </div>
             </div>
             <div className="player__track-play track-play">
-              <div className="track-play__contain">
-                <div className="track-play__image">
-                  <svg className="track-play__svg" alt="music">
-                    <use xlinkHref="img/icon/sprite.svg#icon-note" />
-                  </svg>
-                </div>
-                <div className="track-play__author">
-                  <a className="track-play__author-link" href="http://">
-                    Ты та...
-                  </a>
-                </div>
-                <div className="track-play__album">
-                  <a className="track-play__album-link" href="http://">
-                    Баста
-                  </a>
-                </div>
-              </div>
+              { load ? <PlayerTrackInfo/> : <LoadPlayerTrackInfo/> }
               <div className="track-play__like-dis">
                 <div className="track-play__like _btn-icon">
                   <svg className="track-play__like-svg" alt="like">
