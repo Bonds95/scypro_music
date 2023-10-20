@@ -1,7 +1,7 @@
 import "./App.css";
 import Player from "./components/Player/player";
 import Sidebar from "./components/SideBar/sidebar";
-import Mainblock from "./components/mainblock";
+import Mainblock from "./components/MainBlock/mainblock";
 import NavBar from "./components/NavBar/NavBar";
 import { useState, useEffect } from "react";
 
