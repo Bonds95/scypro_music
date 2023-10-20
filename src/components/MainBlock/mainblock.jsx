@@ -1,6 +1,6 @@
 import TrackFilter from "./Filter/TrackFilter";
 import SearchTrack from "./searchtrack";
-import TrackContainer from "./trackcontainer";
+import TrackContainer from "./Tracks/trackcontainer";
 import * as S from "./mainblock.styles";
 
 export default function Mainblock({ load }) {
