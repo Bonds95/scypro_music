@@ -11,10 +11,8 @@ export default function PlayerTrackInfo() {
       <S.TrackPlayAuthor>
         <S.TrackPlayAuthorLink href="http://">Ты та...</S.TrackPlayAuthorLink>
       </S.TrackPlayAuthor>
-      <S.TrackPlayAlbum className="track-play__album">
-        <S.TrackPlayAlbumLink className="track-play__album-link" href="http://">
-          Баста
-        </S.TrackPlayAlbumLink>
+      <S.TrackPlayAlbum>
+        <S.TrackPlayAlbumLink href="http://">Баста</S.TrackPlayAlbumLink>
       </S.TrackPlayAlbum>
     </S.TrackPlayContain>
   );
