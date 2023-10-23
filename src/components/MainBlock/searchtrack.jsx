@@ -1,18 +1,17 @@
 
-import "./searchtrack.css"
+import * as S from "./searchtrack.styles"
 
 export default function SearchTrack() {
-    return (
-        <div className="centerblock__search search">
-          <svg className="search__svg">
-            <use xlinkHref="img/icon/sprite.svg#icon-search" />
-          </svg>
-          <input
-            className="search__text"
-            type="search"
-            placeholder="Поиск"
-            name="search"
-          />
-        </div>
-    )
+  return (
+    <S.CenterblockSearch>
+      <S.CenterblockSearchSvg>
+        <use xlinkHref="img/icon/sprite.svg#icon-search" />
+      </S.CenterblockSearchSvg>
+      <S.CenterblockSearchText
+        type="search"
+        placeholder="Поиск"
+        name="search"
+      />
+    </S.CenterblockSearch>
+  );
 }
