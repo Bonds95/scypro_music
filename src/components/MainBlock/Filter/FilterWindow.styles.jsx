@@ -38,4 +38,8 @@ export const FilterWindowItem = styled.div`
   font-size: 20px;
   line-height: 24px;
   margin-bottom: 24px;
+  &:hover {
+    text-decoration: underline;
+    color: #b672ff;
+  }
 `;

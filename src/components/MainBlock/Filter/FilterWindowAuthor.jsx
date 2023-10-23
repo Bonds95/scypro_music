@@ -1,5 +1,5 @@
-import "./FilterWindow.css";
 import * as S from "./FilterWindow.styles";
+
 export default function FilterWindowAuthor() {
   return (
     <S.FilterWrapper>
