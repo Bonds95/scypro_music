@@ -11,10 +11,10 @@ function App() {
   const [load, setLoad] = useState(false);
   useEffect(() => {
     setTimeout(() => {
-      setLoad(!load);
-    }, 5000);
-  });
-
+      setLoad(!load)
+    }, 5000)
+  }, []);
+  
   return (
     <div>
       <GlobalStyle />
