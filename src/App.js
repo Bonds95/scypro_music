@@ -1,6 +1,6 @@
 import "./App.css";
 import { GlobalStyle } from "./GlobalStyle";
-import { MainPage } from "./pages/main/MainPage";
+import { AppRoutes } from "./routes";
 
 function App() {
   
@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <MainPage></MainPage>
+      <AppRoutes/>
     </div>
   );
 }

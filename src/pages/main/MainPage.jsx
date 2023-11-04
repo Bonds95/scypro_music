@@ -7,7 +7,7 @@ import * as S from "./MainPage.styles";
 
 export function MainPage() {
   const [load, setLoad] = useState(false);
-  useEffect(() => {
+  useEffect((load) => {
     setTimeout(() => {
       setLoad(!load)
     }, 5000)
