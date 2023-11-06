@@ -4,6 +4,7 @@ import PlaylistItem from "./playlistitem";
 import { playlistImg, loadplaylistImg } from "../arrows";
 import LoadPlaylistItem from "./LoadPlaylistItem";
 import * as S from "./sidebar.styles"
+import { Link } from "react-router-dom";
 
 
 
@@ -14,7 +15,7 @@ export default function Sidebar({ load }) {
       <S.SidebarBlock className="sidebar__block">
         <S.SidebarList className="sidebar__list">
           {load
-            ? playlistImg.map((img) => <PlaylistItem img={img} key={img.id} />)
+            ? playlistImg.map((img) => <Link to={`/categories/${img.id}`}><PlaylistItem img={img} key={img.id} /></Link>)
             : loadplaylistImg.map((img) => (
                 <LoadPlaylistItem img={img} key={img.id} />
               ))}

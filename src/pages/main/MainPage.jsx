@@ -10,7 +10,7 @@ export function MainPage() {
   useEffect((load) => {
     setTimeout(() => {
       setLoad(!load)
-    }, 5000)
+    }, 1000)
   }, []);
   
   return (

@@ -6,7 +6,6 @@ export default function PlaylistItem(props) {
     <S.SidebarItem >
       <S.SidebarLink >
         <S.SidebarImg
-          
           src={props.img.src}
           alt="day's playlist"
         />
