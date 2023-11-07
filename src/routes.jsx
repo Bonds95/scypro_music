@@ -6,12 +6,11 @@ import RegPage from "./pages/registration/registration";
 import FavoritesPage from "./pages/favorites/favorites";
 import CategoriesPage from "./pages/categories/categories";
 import { ProtectedRoute } from "./components/protected-route/protected-route";
-import { useState } from "react";
 
-export function AppRoutes() {
-  const [user, setUser] = useState(null);
-  const handleLogin = () => setUser(true);
-  const handleLogout = () => setUser(false);
+
+export function AppRoutes({user, onClick}) {
+  
+  
   return (
     <Routes>
       <Route
@@ -25,7 +24,7 @@ export function AppRoutes() {
       <Route
         path="/login"
         element={
-          <LoginPage user={user} onToken={user ? handleLogout : handleLogin} />
+          <LoginPage onClick = {onClick} />
         }
       />
       <Route path="/registration" element={<RegPage />} />

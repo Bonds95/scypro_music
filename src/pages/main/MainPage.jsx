@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import * as S from "./MainPage.styles";
 
 export function MainPage() {
+  
   const [load, setLoad] = useState(false);
   useEffect((load) => {
     setTimeout(() => {
