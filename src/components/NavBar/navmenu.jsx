@@ -2,6 +2,9 @@ import * as S from "./navmenu.styles";
 import { Link } from "react-router-dom";
 
 export default function NavMenu() {
+  const handleLogOut = () => {
+    localStorage.removeItem("user");
+  };
   return (
     <S.NavMenu>
       <S.MenuList>
@@ -16,8 +19,8 @@ export default function NavMenu() {
           </Link>
         </S.MenuItem>
         <S.MenuItem>
-          <Link to="/login">
-            <S.MenuLink href="#">Войти</S.MenuLink>
+          <Link onClick={handleLogOut} to="/login">
+            <S.MenuLink href="#">Выйти</S.MenuLink>
           </Link>
         </S.MenuItem>
       </S.MenuList>
