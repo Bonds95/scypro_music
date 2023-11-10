@@ -4,7 +4,9 @@ import { AppRoutes } from "./routes";
 import { useState } from "react";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const getUser = localStorage.getItem("user");
+
+  const [user, setUser] = useState(getUser);
   const handleLogIn = () => {
     localStorage.setItem("user", "setLogin");
     const getUser = localStorage.getItem("user");
