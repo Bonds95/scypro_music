@@ -5,22 +5,16 @@ import NavBar from "../../components/NavBar/NavBar";
 import { useState, useEffect } from "react";
 import * as S from "./MainPage.styles";
 
-export function MainPage() {
+export function MainPage({ tracks, load }) {
   
-  const [load, setLoad] = useState(false);
-  useEffect((load) => {
-    setTimeout(() => {
-      setLoad(!load)
-    }, 1000)
-  }, []);
-  
+
   return (
     <div>
       <S.Wrapper>
         <S.Container>
           <S.Main>
             <NavBar />
-            <Mainblock load={load} />
+            <Mainblock tracks={tracks} load={load} />
             <Sidebar load={load} />
           </S.Main>
           <Player load={load} />
@@ -30,5 +24,3 @@ export function MainPage() {
     </div>
   );
 }
-
-

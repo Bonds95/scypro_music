@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import * as S from "./trackitem.styles";
 
 export default function TrackItem(props) {
-  console.log(props);
+  // console.log(props);
+  useEffect(() => {
+    console.log(props);
+  }, []);
   return (
     <S.PlaylistItem>
       <S.PlaylistTrack>
@@ -13,7 +17,7 @@ export default function TrackItem(props) {
           </S.PlaylistTrackTitleImg>
           <S.PlaylistTrackTitleText>
             <S.PlaylistTrackTitleLink href="http://">
-              {props.track.trackname}
+              {props.track.name}
               <S.PlaylistTrackTitleSpan>
                 {props.track.extra}
               </S.PlaylistTrackTitleSpan>
@@ -35,7 +39,7 @@ export default function TrackItem(props) {
             <use xlinkHref="img/icon/sprite.svg#icon-like" />
           </S.PlaylistTrackTimeSvg>
           <S.PlaylistTrackTimeText>
-            {props.track.duration}
+            {props.track.duration_in_seconds}
           </S.PlaylistTrackTimeText>
         </S.PlaylistTrackTime>
       </S.PlaylistTrack>

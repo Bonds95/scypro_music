@@ -1,7 +1,7 @@
 import * as S from "./playlistitem.styles"
 
 export default function PlaylistItem(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <S.SidebarItem >
       <S.SidebarLink >
