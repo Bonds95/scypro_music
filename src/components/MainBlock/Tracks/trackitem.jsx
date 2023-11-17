@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import * as S from "./trackitem.styles";
 
-export default function TrackItem(props) {
+export default function TrackItem(props, playTrack) {
   // console.log(props);
   useEffect(() => {
     console.log(props);
   }, []);
   return (
-    <S.PlaylistItem>
+    <S.PlaylistItem onClick={playTrack}>
       <S.PlaylistTrack>
         <S.PlaylistTrackTitle>
           <S.PlaylistTrackTitleImg>

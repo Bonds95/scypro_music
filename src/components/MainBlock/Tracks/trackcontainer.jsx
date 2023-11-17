@@ -5,13 +5,11 @@ import * as S from "./trackcontainer.styles";
 import React from "react";
 import { useEffect } from "react";
 
-
-export default function TrackContainer({ load, tracks}) {
-  
+export default function TrackContainer({ load, tracks, playTrack }) {
   useEffect(() => {
     console.log(load);
   }, [load]);
-  
+
   return (
     <S.CenterblockContent>
       <S.CenterblockContentTitle>
@@ -28,9 +26,11 @@ export default function TrackContainer({ load, tracks}) {
       </S.CenterblockContentTitle>
       <S.CenterblockContentPlaylist className="content__playlist playlist">
         {load
-          ? tracks?.map((track) => (<TrackItem track={track} key={track.id} />)) 
+          ? tracks?.map((track) => (
+              <TrackItem playTrack={playTrack} track={track} key={track.id} />
+            ))
           : trackInfo.map((track) => (
-              <p>hello</p>
+              <LoadTrackItem track={track} key={track.id} />
             ))}
       </S.CenterblockContentPlaylist>
     </S.CenterblockContent>
