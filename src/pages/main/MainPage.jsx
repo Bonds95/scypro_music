@@ -13,6 +13,7 @@ export function MainPage({ tracks, load }) {
     console.log("click");
   }
 
+  
   return (
     <div>
       <S.Wrapper>
