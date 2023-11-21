@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import * as S from "./trackitem.styles";
 
-export default function TrackItem(props, playTrack) {
+export default function TrackItem(track, playTrack) {
   // console.log(props);
   useEffect(() => {
-    console.log(props);
+    console.log(track);
   }, []);
   return (
     <S.PlaylistItem onClick={playTrack}>
@@ -17,21 +17,21 @@ export default function TrackItem(props, playTrack) {
           </S.PlaylistTrackTitleImg>
           <S.PlaylistTrackTitleText>
             <S.PlaylistTrackTitleLink href="http://">
-              {props.track.name}
+              {track.track.name}
               <S.PlaylistTrackTitleSpan>
-                {props.track.extra}
+                {track.track.extra}
               </S.PlaylistTrackTitleSpan>
             </S.PlaylistTrackTitleLink>
           </S.PlaylistTrackTitleText>
         </S.PlaylistTrackTitle>
         <S.PlaylistTrackAuthor>
           <S.PlaylistTrackAuthorLink href="http://">
-            {props.track.author}
+            {track.track.author}
           </S.PlaylistTrackAuthorLink>
         </S.PlaylistTrackAuthor>
         <S.PlaylistTrackAlbum>
           <S.PlaylistTrackAlbumLink href="http://">
-            {props.track.album}
+            {track.track.album}
           </S.PlaylistTrackAlbumLink>
         </S.PlaylistTrackAlbum>
         <S.PlaylistTrackTime>
@@ -39,7 +39,7 @@ export default function TrackItem(props, playTrack) {
             <use xlinkHref="img/icon/sprite.svg#icon-like" />
           </S.PlaylistTrackTimeSvg>
           <S.PlaylistTrackTimeText>
-            {props.track.duration_in_seconds}
+            {track.track.duration_in_seconds}
           </S.PlaylistTrackTimeText>
         </S.PlaylistTrackTime>
       </S.PlaylistTrack>
