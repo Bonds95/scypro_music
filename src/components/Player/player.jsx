@@ -3,7 +3,7 @@ import PlayerTrackInfo from "./PlayerTrackInfo";
 import LoadPlayerTrackInfo from "./LoadPlayerTrackInfo";
 import * as S from "./player.styles"
 
-export default function Player({ load }) {
+export default function Player({currentTrack, load }) {
   return (
     <S.Bar>
       <S.BarContent>
@@ -38,7 +38,7 @@ export default function Player({ load }) {
               </S.PlayerBtnShuffle>
             </S.PlayerControls>
             <S.PlayerTrackPlay>
-              {load ? <PlayerTrackInfo /> : <LoadPlayerTrackInfo />}
+              {load ? <PlayerTrackInfo currentTrack={currentTrack}/> : <LoadPlayerTrackInfo />}
               <S.PlayerTrackPlayLikeDis>
                 <S.PlayerTrackPlayLike className="_btn-icon">
                   <S.PlayerTrackPlayLikeSvg alt="like">

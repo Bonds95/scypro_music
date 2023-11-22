@@ -6,12 +6,10 @@ import { useState } from "react";
 import * as S from "./MainPage.styles";
 
 export function MainPage({ tracks, load }) {
-  const [vision, setVision] = useState(false);
+  
+  const [currentTrack, setCurrentTrack] = useState(null);
 
-  function playTrack() {
-    setVision(!vision);
-    console.log("click");
-  }
+  
 
   
   return (
@@ -20,10 +18,10 @@ export function MainPage({ tracks, load }) {
         <S.Container>
           <S.Main>
             <NavBar />
-            <Mainblock playTrack={playTrack} tracks={tracks} load={load} />
+            <Mainblock setCurrentTrack={setCurrentTrack} tracks={tracks} load={load} />
             <Sidebar load={load} />
           </S.Main>
-          {vision && <Player load={load} />}
+          {currentTrack && <Player currentTrack={currentTrack} load={load} />}
           <S.Footer />
         </S.Container>
       </S.Wrapper>
