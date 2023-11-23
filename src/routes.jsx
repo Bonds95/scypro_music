@@ -7,11 +7,11 @@ import FavoritesPage from "./pages/favorites/favorites";
 import CategoriesPage from "./pages/categories/categories";
 import { ProtectedRoute } from "./components/protected-route/protected-route";
 
-export function AppRoutes({ user, onClick, tracks, load }) {
+export function AppRoutes({ getError, user, onClick, tracks, load }) {
   return (
     <Routes>
       <Route element={<ProtectedRoute isAllowed={Boolean(user)} />}>
-        <Route path="/" element={<MainPage load={load} tracks={tracks} />} />
+        <Route path="/" element={<MainPage getError={getError} load={load} tracks={tracks} />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/categories/:id" element={<CategoriesPage />} />
       </Route>

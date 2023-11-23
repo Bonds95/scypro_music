@@ -5,7 +5,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import { useState } from "react";
 import * as S from "./MainPage.styles";
 
-export function MainPage({ tracks, load }) {
+export function MainPage({ getError, tracks, load }) {
   
   const [currentTrack, setCurrentTrack] = useState(null);
 
@@ -18,9 +18,10 @@ export function MainPage({ tracks, load }) {
         <S.Container>
           <S.Main>
             <NavBar />
-            <Mainblock setCurrentTrack={setCurrentTrack} tracks={tracks} load={load} />
+            <Mainblock getError={getError} setCurrentTrack={setCurrentTrack} tracks={tracks} load={load} />
             <Sidebar load={load} />
           </S.Main>
+          <audio controls src="/media/cc0-audio/t-rex-roar.mp3"></audio>
           {currentTrack && <Player currentTrack={currentTrack} load={load} />}
           <S.Footer />
         </S.Container>
