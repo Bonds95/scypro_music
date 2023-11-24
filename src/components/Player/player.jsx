@@ -1,29 +1,29 @@
 import PlayerTrackInfo from "./PlayerTrackInfo";
 import LoadPlayerTrackInfo from "./LoadPlayerTrackInfo";
 import * as S from "./player.styles";
-// import { useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Player({ currentTrack, load }) {
-  // const [isPlaying, setIsPlaying] = useState(false);
-  // const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
-  // const handleStart = () => {
-  //   audioRef.current.play();
-  //   setIsPlaying(true);
-  // };
+  const handleStart = () => {
+    audioRef.current.play();
+    setIsPlaying(true);
+  };
 
-  // const handleStop = () => {
-  //   audioRef.current.pause();
-  //   setIsPlaying(false);
-  // };
+  const handleStop = () => {
+    audioRef.current.pause();
+    setIsPlaying(false);
+  };
 
-  // const togglePlay = isPlaying ? handleStop : handleStart;
+  const togglePlay = isPlaying ? handleStop : handleStart;
 
   return (
     <>
-      {/* <audio controls ref={audioRef}>
+      <audio controls ref={audioRef}>
         <source src={currentTrack.track_file} type="audio/mpeg" />
-      </audio> */}
+      </audio>
 
       <S.Bar>
         <S.BarContent>
@@ -36,7 +36,7 @@ export default function Player({ currentTrack, load }) {
                     <use xlinkHref="img/icon/sprite.svg#icon-prev" />
                   </S.PlayerBtnPrevSvg>
                 </S.PlayerBtnPrev>
-                <S.PlayerBtnPlay >
+                <S.PlayerBtnPlay onClick={togglePlay}>
                   <S.PlayerBtnPlaySvg alt="play">
                     <use xlinkHref="img/icon/sprite.svg#icon-play" />
                   </S.PlayerBtnPlaySvg>
