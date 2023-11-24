@@ -1,3 +1,6 @@
+
+
+
 export const playlistImg = [
     {id: 1, src: "img/playlist01.png"}, 
     {id: 2, src: "img/playlist02.png"}, 
@@ -21,5 +24,7 @@ export const trackInfo = [
   {id: 9, trackname: "How Deep Is Your Love", author: "Calvin Harris, Disciples", extra: "", album: "How Deep Is Your Love", duration: "3:32"},
   {id: 10, trackname: "Morena", author: "Tom Boxer", extra: "", album: "Soundz Made in Romania", duration: "3:36"},
 ]
+
+
 
   

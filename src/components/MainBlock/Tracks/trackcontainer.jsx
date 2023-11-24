@@ -2,8 +2,19 @@ import TrackItem from "./trackitem";
 import { trackInfo } from "../../arrows";
 import LoadTrackItem from "./LoadTrackItem";
 import * as S from "./trackcontainer.styles";
+import React from "react";
+import { useEffect } from "react";
 
-export default function TrackContainer({ load }) {
+export default function TrackContainer({
+  getError,
+  setCurrentTrack,
+  load,
+  tracks,
+}) {
+  useEffect(() => {
+    console.log(tracks);
+  }, [tracks]);
+
   return (
     <S.CenterblockContent>
       <S.CenterblockContentTitle>
@@ -20,10 +31,17 @@ export default function TrackContainer({ load }) {
       </S.CenterblockContentTitle>
       <S.CenterblockContentPlaylist className="content__playlist playlist">
         {load
-          ? trackInfo.map((track) => <TrackItem track={track} key={track.id} />)
+          ? tracks?.map((track) => (
+              <TrackItem
+                setCurrentTrack={setCurrentTrack}
+                track={track}
+                key={track.id}
+              />
+            ))
           : trackInfo.map((track) => (
               <LoadTrackItem track={track} key={track.id} />
             ))}
+        {getError ? <p>Не удалось загрузить список треков</p> : null}
       </S.CenterblockContentPlaylist>
     </S.CenterblockContent>
   );

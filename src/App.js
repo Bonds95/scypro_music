@@ -1,34 +1,51 @@
 import "./App.css";
-import Player from "./components/Player/player";
-import Sidebar from "./components/SideBar/sidebar";
-import Mainblock from "./components/MainBlock/mainblock";
-import NavBar from "./components/NavBar/NavBar";
-import { useState, useEffect } from "react";
 import { GlobalStyle } from "./GlobalStyle";
-import * as S from "./App.styles";
+import { AppRoutes } from "./routes";
+import { useEffect, useState } from "react";
+import { getTracks } from "./api";
 
 function App() {
+  const getUser = localStorage.getItem("user");
+  const [user, setUser] = useState(getUser);
   const [load, setLoad] = useState(false);
+  const [tracks, setTracks] = useState([]);
+  const [getError, setGetError] = useState(false);
+
+  useEffect(
+    (load) => {
+      if (tracks) {
+        setLoad(!load);
+      }
+    },
+    [tracks]
+  );
   useEffect(() => {
-    setTimeout(() => {
-      setLoad(!load)
-    }, 5000)
+    getTracks()
+      .then((tracks) => {
+        setTracks(tracks);
+        setLoad(true);
+      })
+      .catch(() => {
+        setGetError(true)
+      });
   }, []);
-  
+
+  const handleLogIn = () => {
+    localStorage.setItem("user", "setLogin");
+    const getUser = localStorage.getItem("user");
+    setUser(getUser);
+  };
+
   return (
     <div>
       <GlobalStyle />
-      <S.Wrapper>
-        <S.Container>
-          <S.Main>
-            <NavBar />
-            <Mainblock load={load} />
-            <Sidebar load={load} />
-          </S.Main>
-          <Player load={load} />
-          <S.Footer />
-        </S.Container>
-      </S.Wrapper>
+      <AppRoutes
+        load={load}
+        tracks={tracks}
+        user={user}
+        onClick={handleLogIn}
+        getError={getError}
+      />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import * as S from "./PlayerTrackInfo.styles";
 
-export default function PlayerTrackInfo() {
+export default function PlayerTrackInfo({currentTrack}) {
   return (
     <S.TrackPlayContain>
       <S.TrackPlayImage>
@@ -9,10 +9,10 @@ export default function PlayerTrackInfo() {
         </S.TrackPlaySvg>
       </S.TrackPlayImage>
       <S.TrackPlayAuthor>
-        <S.TrackPlayAuthorLink href="http://">Ты та...</S.TrackPlayAuthorLink>
+        <S.TrackPlayAuthorLink href="http://">{currentTrack.name}</S.TrackPlayAuthorLink>
       </S.TrackPlayAuthor>
       <S.TrackPlayAlbum>
-        <S.TrackPlayAlbumLink href="http://">Баста</S.TrackPlayAlbumLink>
+        <S.TrackPlayAlbumLink href="http://">{currentTrack.author}</S.TrackPlayAlbumLink>
       </S.TrackPlayAlbum>
     </S.TrackPlayContain>
   );
