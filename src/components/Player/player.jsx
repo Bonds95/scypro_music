@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 
 export default function Player({ currentTrack, load }) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLooped, setIsLooped] = useState(false);
   const audioRef = useRef(null);
 
   const handleStart = () => {
@@ -17,7 +18,23 @@ export default function Player({ currentTrack, load }) {
     setIsPlaying(false);
   };
 
+  const handleLoopOn = () => {
+    audioRef.current.loop = true;
+    setIsLooped(true);
+    console.log("looped");
+  };
+
+  const handleLoopOff = () => {
+    audioRef.current.loop = false;
+    setIsLooped(false);
+    console.log("unlooped");
+
+  };
+
+
+
   const togglePlay = isPlaying ? handleStop : handleStart;
+  const toggleLoop = isLooped ? handleLoopOff : handleLoopOn;
 
   return (
     <>
@@ -46,7 +63,7 @@ export default function Player({ currentTrack, load }) {
                     <use xlinkHref="img/icon/sprite.svg#icon-next" />
                   </S.PlayerBtnNextSvg>
                 </S.PlayBtnNext>
-                <S.PlayerBtnRepeat className="_btn-icon">
+                <S.PlayerBtnRepeat onClick={toggleLoop} className="_btn-icon">
                   <S.PlayerBtnRepeatSvg alt="repeat">
                     <use xlinkHref="img/icon/sprite.svg#icon-repeat" />
                   </S.PlayerBtnRepeatSvg>
